@@ -12,6 +12,7 @@
         <div class="pull-right">
           <button onclick="location.href='/threads'" type="submit" class="btn btn-default">home</button>
           <button onclick="location.href='/signin'" type="submit" class="btn btn-default">ログイン</button>
+          <button onclick="location.href='/edit'" type="submit" class="btn btn-default">編集</button>
           <button onclick="location.href='/signup'" type="submit" class="btn btn-default">登録</button>
           <button onclick="location.href='/logout'" type="submit" class="btn btn-default">ログアウト</button>
 

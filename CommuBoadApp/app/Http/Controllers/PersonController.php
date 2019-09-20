@@ -68,4 +68,27 @@ class PersonController extends Controller
 
 
   }
+
+
+  public function editshow(Request $request){
+    $sesid = $request -> session() -> get('logid','');
+
+    if($sesid == ''){
+      return redirect('/threads');
+    }else {
+      return view('people_edit');
+    }
+  }
+
+
+  public function edit(Request $request){
+    $new_name = $request -> new_name;
+    $sesid = $request -> session() -> get('logid','');
+    //return view('people_edit',dd($new_name));
+    //DB::insert('insert into people (name) values (:new_name)',$new_name);
+    DB::table('people')
+            ->where('login_id',$sesid )
+            ->update(['name' => $new_name]);
+    return redirect('/threads');
+  }
 }

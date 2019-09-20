@@ -28,3 +28,5 @@ Route::get('logout','PersonController@logout');
 Route::post('signin/{login_id&login_pass}','PersonController@login');
 Route::get('signup','PersonController@create');
 Route::post('signup/{new_login_id&new_login_pass}','PersonController@add');
+Route::get('edit','PersonController@editshow');
+Route::post('edit/{new_name}','PersonController@edit');
