@@ -26,15 +26,13 @@ class PersonController extends Controller
             $request -> session() -> put('logid',$login_id);
             $request -> session() -> put('people_id',$getid);
 
-
-            //$existid = true;
             return redirect('/threads');
+
         } else {
-            //$existid = false;
             return redirect('/signin');
         }
+
     } else {
-        //$existid = false;
         return redirect('/signin');
     }
   }
@@ -52,11 +50,10 @@ class PersonController extends Controller
     $new_login_id = $request -> new_login_id;
     $new_login_pass = $request -> new_login_pass;
 
-
     if(Person::where('login_id','=', $new_login_id)->exists()){
       return redirect('/signup');
-    } else {
 
+    } else {
       $param = [
         'login_id' => $new_login_id,
         'login_pass' => $new_login_pass,
@@ -75,6 +72,7 @@ class PersonController extends Controller
 
     if($sesid == ''){
       return redirect('/threads');
+      
     }else {
       return view('people_edit');
     }
@@ -84,7 +82,7 @@ class PersonController extends Controller
   public function edit(Request $request){
     $new_name = $request -> new_name;
     $sesid = $request -> session() -> get('logid','');
-    
+
     DB::table('people')
             ->where('login_id',$sesid )
             ->update(['name' => $new_name]);

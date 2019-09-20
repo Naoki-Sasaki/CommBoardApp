@@ -53,7 +53,3 @@ class ThreadController extends Controller
     }
 
 }
-
-// select name from people join on (people.id = threads.people_id)
-//view('threads',['getnames' => $getnames])
-// return view('threads',dd($getnames))
