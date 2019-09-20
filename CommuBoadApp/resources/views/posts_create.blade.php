@@ -9,7 +9,7 @@
   </div>
 </h4>
 <table>
-  <form action="{{ str_replace(url('/'),"",request()->fullUrl())}}./{text}" method="post">
+  <form action="{{ str_replace(url('/'),"",request()->fullUrl())}}/{text}" method="post">
     @csrf
     <tr>
       <td>

@@ -84,8 +84,7 @@ class PersonController extends Controller
   public function edit(Request $request){
     $new_name = $request -> new_name;
     $sesid = $request -> session() -> get('logid','');
-    //return view('people_edit',dd($new_name));
-    //DB::insert('insert into people (name) values (:new_name)',$new_name);
+    
     DB::table('people')
             ->where('login_id',$sesid )
             ->update(['name' => $new_name]);

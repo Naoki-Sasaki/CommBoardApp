@@ -19,7 +19,7 @@ Route::get('threads','ThreadController@index');
 Route::get('threads/create','ThreadController@create');
 Route::post('threads/{title}','ThreadController@add');
 
-Route::get('posts/{threads_id}','PostController@index');
+Route::get('posts/{threads_id}','PostController@index') -> name('thre');
 Route::get('posts/{threads_id}/create','PostController@create');
 Route::post('posts/{threads_id}/create/{text}','PostController@add');
 

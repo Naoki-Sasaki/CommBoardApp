@@ -48,20 +48,33 @@ class PostController extends Controller
 
 
     public function add(Request $request){
-      $this_text = $request -> texts;
+      $this_text = $request -> text;
       $sesid = $request -> session() -> get('people_id','');
       $this_threads_id = $request -> threads_id;
 
-      $param = [
-        'threads_id' => $this_threads_id,
-        'post_datetime' => Carbon::now(),
-        'people_id' => $sesid[0] -> id,
-        'text' => $request -> $this_text,
-      ];
+      // $param = [
+      //   'threads_id' => $this_threads_id,
+      //   'post_datetime' => Carbon::now(),
+      //   'people_id' => $sesid[0] -> id,
+      //   'text' => $request -> $this_text,
+      // ];
 
-      DB::insert('insert into posts (threads_id,post_datetime,people_id,text) values (:threds_id, :post_datetime,:people_id,:text)',$param);
+      DB::table('posts')->insert(
+        ['thread_id' => $this_threads_id,
+         'post_datetime' => Carbon::now(),
+         'people_id'=> $sesid[0] -> id,
+         'text' => $this_text
+       ]);
 
-      return redirect('/threads');
+      // DB::insert('insert into posts (thread_id,post_datetime,people_id,text) values (:threds_id, :post_datetime,:people_id,:text)',$param);
+
+      return redirect(route('thre',['threads_id' => $this_threads_id]));
+
+      // $table->increments('id');
+      // $table->integer('thread_id');
+      // $table->datetime('post_datetime');
+      // $table->text('people_id');
+      // $table->text('text',100);
     }
 
 
