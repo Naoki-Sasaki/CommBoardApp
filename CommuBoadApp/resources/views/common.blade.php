@@ -8,14 +8,13 @@
   <body>
     <header>
       <nav class="navbar navbar-dark" style="background-color:#e3f2fd">
-        <h3>0.5ちゃんねる</h3>
+        <h3>テスト</h3>
         <div class="pull-right">
           <button onclick="location.href='/threads'" type="submit" class="btn btn-default">home</button>
           <button onclick="location.href='/signin'" type="submit" class="btn btn-default">ログイン</button>
           <button onclick="location.href='/edit'" type="submit" class="btn btn-default">編集</button>
           <button onclick="location.href='/signup'" type="submit" class="btn btn-default">登録</button>
           <button onclick="location.href='/logout'" type="submit" class="btn btn-default">ログアウト</button>
-
         </div>
       </nav>
     </header>

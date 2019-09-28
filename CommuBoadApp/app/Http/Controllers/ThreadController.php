@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Thread;
 use Carbon\Carbon;
+use App\Http\Requests\CreateThread;
 
 class ThreadController extends Controller
 {
@@ -34,7 +35,7 @@ class ThreadController extends Controller
 
 
 
-    public function add(Request $request){
+    public function add(CreateThread $request){
       $addtitle = $request -> title;
       $sesid = $request -> session() -> get('people_id');
 

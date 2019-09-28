@@ -22,4 +22,14 @@
         </form>
       </table>
     </div>
+
+    @if($errors -> any())
+      <div class="error">
+        <ul>
+          @foreach($errors -> all() as $message)
+            <li>{{$message}}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
 @endsection

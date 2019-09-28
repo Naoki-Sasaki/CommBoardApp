@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Person;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\LoginPerson;
+use App\Http\Requests\CreatePerson;
 
 class PersonController extends Controller
 {
@@ -12,7 +14,7 @@ class PersonController extends Controller
         return view('login');
   }
 
-  public function login(Request $request){
+  public function login(LoginPerson $request){
     $login_id = $request -> login_id;
     $login_pass = $request -> login_pass;
 
@@ -46,7 +48,7 @@ class PersonController extends Controller
         return view('create_people');
   }
 
-  public function add(Request $request){
+  public function add(CreatePerson $request){
     $new_login_id = $request -> new_login_id;
     $new_login_pass = $request -> new_login_pass;
 
@@ -72,7 +74,7 @@ class PersonController extends Controller
 
     if($sesid == ''){
       return redirect('/threads');
-      
+
     }else {
       return view('people_edit');
     }
