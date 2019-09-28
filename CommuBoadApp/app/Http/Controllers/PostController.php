@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CreatePost;
 
 class PostController extends Controller
 {
@@ -42,7 +43,7 @@ class PostController extends Controller
 
 
 
-    public function add(Request $request){
+    public function add(CreatePost $request){
       $this_text = $request -> text;
       $sesid = $request -> session() -> get('people_id','');
       $this_threads_id = $request -> threads_id;
