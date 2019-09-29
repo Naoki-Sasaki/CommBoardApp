@@ -1,6 +1,13 @@
 @extends('common')
 @section('title', 'threads')
 @section('content')
+
+<div class="jumbotron well">
+  <div class="container">
+    <p>ID：tanaka、PASS：tanakaでログイン可能</p>
+  </div>
+</div>
+
 <h4>スレッド一覧
 <div class="pull-right">
   <p>{{$sesid}}</p>
