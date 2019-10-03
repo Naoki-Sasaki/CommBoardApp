@@ -8,12 +8,10 @@
   </div>
 </div>
 
-<h4>スレッド一覧
-<div class="pull-right">
-  <p>{{$sesid}}</p>
-</div>
-</h4>
+
+<div class="container">
   <table class="table">
+    <tr>スレッド一覧</tr>
     @for($i = 0; $i < count($getnames); $i++)
       <tr>
         <tabel>
@@ -24,15 +22,23 @@
             </tr>
           <tr>
             <td>
-              <h7>作成者：{{$getnames[$i] -> name}}　　　　　作成日時：{{$all[$i] -> create_datetime}}</h7>
+              <h7>{{$getnames[$i] -> name}}：{{$all[$i] -> create_datetime}}</h7>
             </td>
           </tr>
         </tabel>
       </tr>
     @endfor
+
+    <td class="active">
+      <a href="threads/create">
+        <button type="submit" class="btn btn-default">スレッドを作成する</button>
+  </td>
   </table>
-  <td class="active">
-    <a href="threads/create">
-      <button type="submit" class="btn btn-default">スレッドを作成する</button>
-</td>
+</div>
+
+<div class="jumbotron well">
+  <div class="container">
+    <p>{{$sesid}}でログイン中</p>
+  </div>
+</div>
 @endsection

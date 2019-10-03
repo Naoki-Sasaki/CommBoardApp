@@ -24,7 +24,7 @@ class CreatePost extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required','max:100'],
+            'text' => ['required','max:100'],
         ];
     }
 }

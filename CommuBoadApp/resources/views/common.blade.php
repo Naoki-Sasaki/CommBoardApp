@@ -12,7 +12,7 @@
         <div class="container-fluid">
           <div class="collapse navbar-collapse">
             <div class="navbar-header">
-              <a class="navbar-brand" href="threads">home</a>
+              <a class="navbar-brand" href="/threads">home</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/signin">signin</a></li>
