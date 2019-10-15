@@ -20,7 +20,7 @@ class ThreadController extends Controller
 
       $sesid = $request -> session() -> get('logid','');
 
-      return view('threads',compact('getnames','all','sesid'));
+      return view('threads',compact('getnames','all','sesid','sesid'));
     }
 
 

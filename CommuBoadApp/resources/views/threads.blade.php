@@ -8,7 +8,6 @@
   </div>
 </div>
 
-
 <div class="container">
   <table class="table">
     <tr>スレッド一覧</tr>
@@ -28,7 +27,6 @@
         </tabel>
       </tr>
     @endfor
-
     <td class="active">
       <a href="threads/create">
         <button type="submit" class="btn btn-default">スレッドを作成する</button>

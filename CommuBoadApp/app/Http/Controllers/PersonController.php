@@ -10,8 +10,9 @@ use App\Http\Requests\CreatePerson;
 
 class PersonController extends Controller
 {
-  public function show(){
-        return view('login');
+  public function show(Request $request){
+        $sesid = $request -> session() -> get('logid','');
+        return view('login',compact('sesid'));
   }
 
   public function login(LoginPerson $request){
@@ -44,8 +45,9 @@ class PersonController extends Controller
     return redirect('/threads');
   }
 
-  public function create(){
-        return view('create_people');
+  public function create(Request $request){
+    $sesid = $request -> session() -> get('logid','');
+        return view('create_people',compact('sesid'));
   }
 
   public function add(CreatePerson $request){
@@ -76,7 +78,7 @@ class PersonController extends Controller
       return redirect('/threads');
 
     }else {
-      return view('people_edit');
+      return view('people_edit',compact('sesid'));
     }
   }
 
